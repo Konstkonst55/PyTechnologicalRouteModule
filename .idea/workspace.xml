@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09dcd070-4bc2-4bf5-9005-2e9c75db9f3d" name="Changes" comment="Реализован скрипт по заполнению агрегатов" />
+    <list default="true" id="09dcd070-4bc2-4bf5-9005-2e9c75db9f3d" name="Changes" comment="Реализован вывод информации о модели">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TechRoutePredictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TechRoutePredictor.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682962394359</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Реализован вывод информации о модели">
+      <created>1682963011308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682963011308</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +194,7 @@
     </ignored-roots>
     <MESSAGE value="Доработан модуль" />
     <MESSAGE value="Реализован скрипт по заполнению агрегатов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован скрипт по заполнению агрегатов" />
+    <MESSAGE value="Реализован вывод информации о модели" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализован вывод информации о модели" />
   </component>
 </project>

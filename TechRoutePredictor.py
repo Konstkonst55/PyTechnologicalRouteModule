@@ -63,8 +63,7 @@ class DataProcessor:
 
     def fit_transform_osn_data(self, df: DataFrame) -> DataFrame:
         for col in df.columns:
-            first = df.loc[df.index[0], col]
-            if isinstance(first, str) or first == -1:
+            if df[col].dtype == object or df[col].eq(-1).any():
                 self.le_dict_osn[col] = LabelEncoder()
                 df[col] = self.le_dict_osn[col].fit_transform(df.astype(str).__getattr__(col))
         save(self.le_dict_osn, ENCODER_OSN_PATH, ENCODER_OSN_FILE_NAME)
@@ -73,8 +72,7 @@ class DataProcessor:
     def transform_osn_data(self, df: DataFrame) -> DataFrame:
         try:
             for col in df.columns:
-                first = df.loc[df.index[0], col]
-                if isinstance(first, str) or first == -1:
+                if df[col].dtype == object or df[col].eq(-1).any():
                     df[col] = self.le_dict_osn[col].transform(df.astype(str).__getattr__(col))
             return df
 
@@ -85,8 +83,7 @@ class DataProcessor:
 
     def fit_transform_usl_data(self, df: DataFrame) -> DataFrame:
         for col in df.columns:
-            first = df.loc[df.index[0], col]
-            if isinstance(first, str) or first == -1:
+            if df[col].dtype == object or df[col].eq(-1).any():
                 self.le_dict_usl[col] = LabelEncoder()
                 df[col] = self.le_dict_usl[col].fit_transform(df.astype(str).__getattr__(col))
         save(self.le_dict_usl, ENCODER_USL_PATH, ENCODER_USL_FILE_NAME)
@@ -95,8 +92,7 @@ class DataProcessor:
     def transform_usl_data(self, df: DataFrame) -> DataFrame:
         try:
             for col in df.columns:
-                first = df.loc[df.index[0], col]
-                if isinstance(first, str) or first == -1:
+                if df[col].dtype == object or df[col].eq(-1).any():
                     df[col] = self.le_dict_usl[col].transform(df.astype(str).__getattr__(col))
             return df
 
@@ -154,6 +150,7 @@ def print_model_info(model: RandomForestRegressor, x, y):
     print("Качество", model.score(x, y).round(2))
     print("R^2", r2_score(y, model.predict(x)).round(2))
     print("MAE", mean_absolute_error(y, model.predict(x)).round(2))
+
 
 def check_dict(dic: dict, args: list[str]) -> bool:
     for arg in args:
@@ -300,7 +297,7 @@ def get_rfr_model(path: str, name: str) -> RandomForestRegressor:
         return joblib.load(full_path)
     else:
         print("get_rfr_model вернул RandomForestRegressor")
-        return RandomForestRegressor()
+        return RandomForestRegressor(n_estimators=150)
 
 
 def get_le(path: str, name: str) -> dict:
