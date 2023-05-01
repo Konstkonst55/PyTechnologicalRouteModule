@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09dcd070-4bc2-4bf5-9005-2e9c75db9f3d" name="Changes" comment="">
+    <list default="true" id="09dcd070-4bc2-4bf5-9005-2e9c75db9f3d" name="Changes" comment="Добавлен исполняемый файл">
+      <change afterPath="$PROJECT_DIR$/AggregatePlaceholder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TechRoutePredictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TechRoutePredictor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,28 @@
       <recent name="D:\College\Other\PyProjects\PyTechnologicalRouteModule" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.AggregatePlaceholder">
+    <configuration name="AggregatePlaceholder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyTechnologicalRouteModule" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AggregatePlaceholder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="TechRoutePredictor" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PyTechnologicalRouteModule" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,10 +118,12 @@
     </configuration>
     <list>
       <item itemvalue="Python.TechRoutePredictor" />
+      <item itemvalue="Python.AggregatePlaceholder" />
       <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.AggregatePlaceholder" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -114,6 +137,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681134082458</updated>
     </task>
+    <task id="LOCAL-00001" summary="Доработан модуль">
+      <created>1681923912576</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681923912576</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,5 +178,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="Доработан модуль" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработан модуль" />
   </component>
 </project>
