@@ -8,6 +8,7 @@ import pandas as pd
 import pkg_resources
 from pandas import DataFrame
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score, mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import joblib
@@ -110,12 +111,14 @@ class ModelProcessor:
         self.rfr_model_osn = get_rfr_model(MODEL_OSN_PATH, MODEL_OSN_FILE_NAME)
         self.rfr_model_usl = get_rfr_model(MODEL_USL_PATH, MODEL_USL_FILE_NAME)
 
-    def fit_osn_model(self, x_trn, y_trn, x_test, y_test):  # todo тестовые данные использовать в проверке качества
+    def fit_osn_model(self, x_trn, y_trn, x_test, y_test):
         self.rfr_model_osn.fit(x_trn, y_trn)
+        print_model_info(self.rfr_model_osn, x_test, y_test)
         save(self.rfr_model_osn, MODEL_OSN_PATH, MODEL_OSN_FILE_NAME)
 
-    def fit_usl_model(self, x_trn, y_trn, x_test, y_test):  # todo тестовые данные использовать в проверке качества
+    def fit_usl_model(self, x_trn, y_trn, x_test, y_test):
         self.rfr_model_usl.fit(x_trn, y_trn)
+        print_model_info(self.rfr_model_usl, x_test, y_test)
         save(self.rfr_model_usl, MODEL_USL_PATH, MODEL_USL_FILE_NAME)
 
     def predict_data(self, data: DataFrame, predict_col_name: str, data_processor: DataProcessor) -> DataFrame:
@@ -145,6 +148,12 @@ def main():
         predict_data(args_dict, model_processor, data_processor)
         return
 
+
+def print_model_info(model: RandomForestRegressor, x, y):
+    print("Веса", model.feature_importances_)
+    print("Качество", model.score(x, y).round(2))
+    print("R^2", r2_score(y, model.predict(x)).round(2))
+    print("MAE", mean_absolute_error(y, model.predict(x)).round(2))
 
 def check_dict(dic: dict, args: list[str]) -> bool:
     for arg in args:
